@@ -31,3 +31,6 @@ _autosave-*
 gerber*
 *-gerber
 *.zip
+
+# build files
+build

@@ -1,4 +1,4 @@
-18056104800211201
+18057704863232201
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -80191,6 +80191,13 @@ MWSA0503S
 0
 2
 2
+universalStepDown
+PinHeader_1x04_P2.54mm_Horizontal
+Through hole angled pin header, 1x04, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x04 2.54mm single row
+0
+4
+4
 universalStepDown
 SMNR8040
 
