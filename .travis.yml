@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+env: SH="docker exec -t container bash -c"
+
+before_install:
+  - docker run -d --name container -v $(pwd):/travis -w /travis yaqwsx/pcbpresentation tail -f /dev/null
+  - docker ps
+
+script:
+  - $SH "xvfb-run make web"
+
+deploy:
+  provider: pages
+  local_dir: build/web
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  on:
+    branch: master

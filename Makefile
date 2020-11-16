@@ -1,7 +1,7 @@
 
-.PHONY: clean
+.PHONY: clean web
 
-all: build/stepDown3V3-panel build/stepDown5V-panel
+all: build/stepDown3V3-panel build/stepDown5V-panel web
 
 build:
 	mkdir -p build
@@ -29,6 +29,8 @@ build/stepDown5V-panel: build/stepDown5V-panel.kicad_pcb board/universalStepDown
 		--missingError --field LCSC_5V,LCSC \
 		--ignore J1 \
 		$< $@
+
+include web.mk
 
 clean:
 	rm -rf build

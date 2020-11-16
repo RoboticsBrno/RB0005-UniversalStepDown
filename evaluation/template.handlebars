@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <title>{{pageName}}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{resource "assets/normalize.css"}}">
+        <link rel="stylesheet" href="{{resource "assets/skeleton.css"}}">
+        <link href="{{resource "assets/style.css"}}" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1 class="text-2xl font-bold">
+                    {{pageName}}
+                </h1>
+                <p>
+                    This page provides evaluation of <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown">RB0005 – UniversalStepdown</a> shown in the photo below:
+                </p>
+                <a href="{{resource "assets/photo.jpg"}}" class="glightbox u-full-width block">
+                    <img src="{{resource "assets/photo.jpg"}}" class="block" style="max-height: 400px; max-width: 100%; margin: 4px auto;"/>
+                </a>
+                <p>
+                    You can use the step-down regulator with input voltage up to 18&nbsp;V.
+                    Without an active cooling the step-down is able to deliver 3&nbsp;A
+                    continuously on the output. The step-down shows a voltage drop on the output when
+                    it is loaded with 4&nbsp;A continuously. This is probably caused by
+                    a high die temperature inside the driver IC which leads to a
+                    shift in the internal voltage reference. Once you introduce extra
+                    cooling, it can deliver over 4&nbsp;A continuously. We do not recommend
+                    to source more than 4&nbsp;A continuously as higher currents
+                    trigger the internal over-temperature protection leading to a
+                    regulator shut-down.
+                </p>
+
+                <p>
+                    The ripple on the output is less than 100&nbsp;mV peak-to-peak in
+                    the worst case. In loads less than 2&nbsp;A the output ripple is less than 50&nbsp;mV.
+                </p>
+
+                <p>
+                    The voltage drop on the step-down is 420&nbsp;mV under 100&nbsp;mA load.
+                    When the load increases to 4&nbsp;A the drop increases to 900&nbsp;mV.
+                </p>
+
+                <p>
+                    You can examine our test setup in the
+                    <a href="#setup">
+                        bottom of the page.
+                    </a>
+                </p>
+            </div>
+
+            <div class="row">
+                <h2>
+                    RB0005 – UniversalStepdown properties
+                </h2>
+                <p>
+                    The following tables provides raw data from testing
+                    the step-down converter. Please note that the oscilloscope
+                    screenshots can differ in voltage per division.
+                </p>
+                <p>
+                    The chip and coil temperature was measured by a K-type thermocoupler
+                    after 5 minutes of operation for a 1 minute. In one of the
+                    cases the temperature did not rise, therefore, the measurement
+                    should reflect conditions during continuous operation.
+                </p>
+                {{#each dataPerVoltage}}
+                    <h3>
+                        Parameters for input voltage {{@key}} V
+                    </h3>
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Load
+                                </td>
+                                <td>
+                                    Output voltage
+                                </td>
+                                <td>
+                                    Output ripple
+                                </td>
+                                <td>
+                                    Input current
+                                </td>
+                                <td>
+                                    Temperature chip, coil
+                                </td>
+                                <td>
+                                    Output voltage waveform
+                                </td>
+                            </tr>
+                        </thead>
+                        {{#each this}}
+                            <tr>
+                                <td class="text-center">
+                                    {{fixedPoint this.load}} A
+                                </td>
+                                <td class="text-center">
+                                    {{fixedPoint this.outputVoltage}} V
+                                </td>
+                                <td class="text-center">
+                                    {{fixedPoint this.ripple}} mV
+                                </td>
+                                <td class="text-center">
+                                    {{fixedPoint this.inputCurrent}} A
+                                </td>
+                                <td class="text-center">
+                                    {{fixedPoint this.chipTemperature}} °C, {{fixedPoint this.coilTemperature}}°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{resource this.scopeImage}}"
+                                        class="glightbox"
+                                        data-gallery="gallery-{{@../key}}"
+                                        data-title="{{@../key}} V input, {{this.load}} A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </table>
+                {{/each}}
+            </div>
+
+            <h2 class="text-xl font-bold mt-4">
+                Figures
+            </h2>
+            <div class="row">
+                <img class="six columns"
+                    src="{{chartSrc "Efficiency"}}"/>
+                <img class="six columns"
+                    src="{{chartSrc "Output voltage"}}"/>
+            </div>
+            <div class="row">
+                <img class="six columns"
+                    src="{{chartSrc "Ripple"}}"/>
+                <img class="six columns"
+                    src="{{chartSrc "Coil temperature"}}"/>
+            </div>
+            <div class="row">
+                <img class="six columns"
+                    src="{{chartSrc "Chip temperature"}}"/>
+            </div>
+
+            <h2 id="setup">
+                Measurement setup
+            </h2>
+            <p>
+                The measurements above were taken in an ambient temperature 24°C using the following equipment:
+                <ul>
+                    <li>Electronic load:
+                        <a href="https://www.bkprecision.com/products/dc-electronic-loads/8540-150-w-dc-electronic-load.html"
+                           class="no-underline text-blue-400 hover:underline;">
+                           B&amp;K Precision 8540
+                        </a>
+                    </li>
+                    <li>Multimeter for voltage &amp; current measurement:
+                        <a href="https://t1.daumcdn.net/cfile/tistory/99C4F8335A13B27607?download"
+                           class="no-underline text-blue-400 hover:underline;">
+                           ESCORT 179
+                        </a>
+                    </li>
+                    <li>Oscilloscope:
+                        <a href="https://www.rigolna.com/products/digital-oscilloscopes/1000z/"
+                           class="no-underline text-blue-400 hover:underline;">
+                           Rigol DS1054Z
+                        </a>
+                    </li>
+                    <li>Multimeter for contact temperature measurement:
+                        <a href="https://www.uni-t.cz/en/p/multimeter-uni-t-ut-70a"
+                           class="no-underline text-blue-400 hover:underline;">
+                           Uni-T UT-70A
+                        </a>
+                    </li>
+                </ul>
+            </p>
+            <div class="row">
+                <a href="{{resource "assets/setup1.jpg"}}" class="glightbox six columns" data-gallery="setup">
+                    <img src="{{resource "assets/setup1.jpg"}}" class="u-full-width" style="margin-bottom: 10px;"/>
+                </a>
+                <a href="{{resource "assets/setup2.jpg"}}" class="glightbox six columns" data-gallery="setup">
+                    <img src="{{resource "assets/setup2.jpg"}}" class="u-full-width" style="margin-bottom: 10px;"/>
+                </a>
+            </div>
+
+            <div id="footer">
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            const lightbox = GLightbox();
+        </script>
+    </body>
+</html>

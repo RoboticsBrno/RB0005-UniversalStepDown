@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$" $endif$>
+
+    <head>
+        <title>RB0005 – UniversalStepdown</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="resources/normalize.css" type="text/css">
+        <link rel="stylesheet" href="resources/skeleton.css" type="text/css">
+        <link rel="stylesheet" href="resources/style.css" type="text/css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            $body$
+        </div>
+    </body>
+
+    </html>
