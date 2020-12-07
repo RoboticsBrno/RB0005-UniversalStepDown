@@ -2,6 +2,9 @@
 
 ![StepDown photo](evaluation/assets/header.jpg)
 
+[![I sell on
+Tindie!](https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-mediums.png)](https://www.tindie.com/stores/yaqwsx/?ref=offsite_badges&utm_source=sellers_yaqwsx&utm_medium=badges&utm_campaign=badge_large)
+
 
 Most of our projects at RoboticsBrno are powered either by Li-ion cells or 12V
 power sources. However, most of our servos and boards require either 5V or 3V3
