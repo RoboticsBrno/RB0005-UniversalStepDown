@@ -1,0 +1,674 @@
+<html>
+    <head>
+        <title>Performance of UniversalStepdown 3V3 version</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="resources/cf172a4740f14fccb3e05a761c97ffc1.css">
+        <link rel="stylesheet" href="resources/f331a19790d54af480466ddc9ceb11db.css">
+        <link href="resources/af0714acf8ee447e8a2b89cc1d404562.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1 class="text-2xl font-bold">
+                    Performance of UniversalStepdown 3V3 version
+                </h1>
+                <p>
+                    This page provides evaluation of <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown">RB0005 – UniversalStepdown</a> shown in the photo below:
+                </p>
+                <a href="resources/ee47301fe11647b298259720d591d4e3.jpg" class="glightbox u-full-width block">
+                    <img src="resources/3953eb66a9514affa20c86980dbba89d.jpg" class="block" style="max-height: 400px; max-width: 100%; margin: 4px auto;"/>
+                </a>
+                <p>
+                    You can use the step-down regulator with input voltage up to 18&nbsp;V.
+                    Without an active cooling the step-down is able to deliver 3&nbsp;A
+                    continuously on the output. The step-down shows a voltage drop on the output when
+                    it is loaded with 4&nbsp;A continuously. This is probably caused by
+                    a high die temperature inside the driver IC which leads to a
+                    shift in the internal voltage reference. Once you introduce extra
+                    cooling, it can deliver over 4&nbsp;A continuously. We do not recommend
+                    to source more than 4&nbsp;A continuously as higher currents
+                    trigger the internal over-temperature protection leading to a
+                    regulator shut-down.
+                </p>
+
+                <p>
+                    The ripple on the output is less than 100&nbsp;mV peak-to-peak in
+                    the worst case. In loads less than 2&nbsp;A the output ripple is less than 50&nbsp;mV.
+                </p>
+
+                <p>
+                    The voltage drop on the step-down is 420&nbsp;mV under 100&nbsp;mA load.
+                    When the load increases to 4&nbsp;A the drop increases to 900&nbsp;mV.
+                </p>
+
+                <p>
+                    You can examine our test setup in the
+                    <a href="#setup">
+                        bottom of the page.
+                    </a>
+                </p>
+            </div>
+
+            <div class="row">
+                <h2>
+                    RB0005 – UniversalStepdown properties
+                </h2>
+                <p>
+                    The following tables provides raw data from testing
+                    the step-down converter. Please note that the oscilloscope
+                    screenshots can differ in voltage per division.
+                </p>
+                <p>
+                    The chip and coil temperature was measured by a K-type thermocoupler
+                    after 5 minutes of operation for a 1 minute. In one of the
+                    cases the temperature did not rise, therefore, the measurement
+                    should reflect conditions during continuous operation.
+                </p>
+                    <h3>
+                        Parameters for input voltage 14.0 V
+                    </h3>
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Load
+                                </td>
+                                <td>
+                                    Output voltage
+                                </td>
+                                <td>
+                                    Output ripple
+                                </td>
+                                <td>
+                                    Input current
+                                </td>
+                                <td>
+                                    Temperature chip, coil
+                                </td>
+                                <td>
+                                    Output voltage waveform
+                                </td>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td class="text-center">
+                                    0.1 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    40 mV
+                                </td>
+                                <td class="text-center">
+                                    0.03 A
+                                </td>
+                                <td class="text-center">
+                                    23 °C, 25°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/bf4c6d15d9834f4ba9472bab9b85a5d9.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 0.1 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    0.5 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    40 mV
+                                </td>
+                                <td class="text-center">
+                                    0.13 A
+                                </td>
+                                <td class="text-center">
+                                    28 °C, 29°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/7236bf4740124dc3b52d751da0dcff5c.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 0.5 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    1 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    30 mV
+                                </td>
+                                <td class="text-center">
+                                    0.26 A
+                                </td>
+                                <td class="text-center">
+                                    30 °C, 32°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/476b4401812846f5b94becf36494a1b6.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 1.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    2 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    70 mV
+                                </td>
+                                <td class="text-center">
+                                    0.51 A
+                                </td>
+                                <td class="text-center">
+                                    36 °C, 39°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/a70b0e86f35043babb953ac1c6a8a4b3.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 2.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    3 A
+                                </td>
+                                <td class="text-center">
+                                    3.29 V
+                                </td>
+                                <td class="text-center">
+                                    100 mV
+                                </td>
+                                <td class="text-center">
+                                    0.79 A
+                                </td>
+                                <td class="text-center">
+                                    48 °C, 60°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/ce60b25b135c4584a4005b872218f586.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 3.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    4 A
+                                </td>
+                                <td class="text-center">
+                                    3.02 V
+                                </td>
+                                <td class="text-center">
+                                    90 mV
+                                </td>
+                                <td class="text-center">
+                                    1.01 A
+                                </td>
+                                <td class="text-center">
+                                    80 °C, 91°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/9537db38636748f982fac0a7538dc6a1.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-14.0"
+                                        data-title="14.0 V input, 4.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                    </table>
+                    <h3>
+                        Parameters for input voltage 7.4 V
+                    </h3>
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Load
+                                </td>
+                                <td>
+                                    Output voltage
+                                </td>
+                                <td>
+                                    Output ripple
+                                </td>
+                                <td>
+                                    Input current
+                                </td>
+                                <td>
+                                    Temperature chip, coil
+                                </td>
+                                <td>
+                                    Output voltage waveform
+                                </td>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td class="text-center">
+                                    0.1 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    40 mV
+                                </td>
+                                <td class="text-center">
+                                    0.05 A
+                                </td>
+                                <td class="text-center">
+                                    23 °C, 24°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/ae262e7addbc4fa98ba621dcf50a4ee4.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 0.1 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    0.5 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    50 mV
+                                </td>
+                                <td class="text-center">
+                                    0.24 A
+                                </td>
+                                <td class="text-center">
+                                    27 °C, 28°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/1d401ca28a7847c9a7fc73a72b69b3bf.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 0.5 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    1 A
+                                </td>
+                                <td class="text-center">
+                                    3.31 V
+                                </td>
+                                <td class="text-center">
+                                    50 mV
+                                </td>
+                                <td class="text-center">
+                                    0.47 A
+                                </td>
+                                <td class="text-center">
+                                    29 °C, 30°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/e345b0d237464b6a904003a2ca81bc33.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 1.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    2 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    70 mV
+                                </td>
+                                <td class="text-center">
+                                    0.96 A
+                                </td>
+                                <td class="text-center">
+                                    33 °C, 37°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/a57877b3273d4e3b8222c063ce3ebe26.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 2.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    3 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    90 mV
+                                </td>
+                                <td class="text-center">
+                                    1.49 A
+                                </td>
+                                <td class="text-center">
+                                    43 °C, 52°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/c9c0a01dd1614e469b98697020e6d0f3.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 3.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    4 A
+                                </td>
+                                <td class="text-center">
+                                    3.16 V
+                                </td>
+                                <td class="text-center">
+                                    90 mV
+                                </td>
+                                <td class="text-center">
+                                    1.96 A
+                                </td>
+                                <td class="text-center">
+                                    62 °C, 77°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/d27878a67033475d9d00979b751b2fc4.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-7.4"
+                                        data-title="7.4 V input, 4.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                    </table>
+                    <h3>
+                        Parameters for input voltage 4.2 V
+                    </h3>
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Load
+                                </td>
+                                <td>
+                                    Output voltage
+                                </td>
+                                <td>
+                                    Output ripple
+                                </td>
+                                <td>
+                                    Input current
+                                </td>
+                                <td>
+                                    Temperature chip, coil
+                                </td>
+                                <td>
+                                    Output voltage waveform
+                                </td>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td class="text-center">
+                                    0.1 A
+                                </td>
+                                <td class="text-center">
+                                    3.31 V
+                                </td>
+                                <td class="text-center">
+                                    40 mV
+                                </td>
+                                <td class="text-center">
+                                    0.08 A
+                                </td>
+                                <td class="text-center">
+                                    25 °C, 25°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/62397e65b7c14814896ed43d5fe28918.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 0.1 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    0.5 A
+                                </td>
+                                <td class="text-center">
+                                    3.31 V
+                                </td>
+                                <td class="text-center">
+                                    30 mV
+                                </td>
+                                <td class="text-center">
+                                    0.4 A
+                                </td>
+                                <td class="text-center">
+                                    26 °C, 26°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/e662edb083044c1aa14dd7a81b06f3fa.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 0.5 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    1 A
+                                </td>
+                                <td class="text-center">
+                                    3.31 V
+                                </td>
+                                <td class="text-center">
+                                    30 mV
+                                </td>
+                                <td class="text-center">
+                                    0.81 A
+                                </td>
+                                <td class="text-center">
+                                    26 °C, 27°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/9e9b5c22d4c6404b82a0cb0588108609.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 1.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    2 A
+                                </td>
+                                <td class="text-center">
+                                    3.32 V
+                                </td>
+                                <td class="text-center">
+                                    50 mV
+                                </td>
+                                <td class="text-center">
+                                    1.69 A
+                                </td>
+                                <td class="text-center">
+                                    29 °C, 34°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/4c2586c700674fbea47c4a0a932f8c7d.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 2.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    3 A
+                                </td>
+                                <td class="text-center">
+                                    3.33 V
+                                </td>
+                                <td class="text-center">
+                                    70 mV
+                                </td>
+                                <td class="text-center">
+                                    2.67 A
+                                </td>
+                                <td class="text-center">
+                                    41 °C, 51°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/8daa87fe257e4e6a86b4d1b98921eb9c.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 3.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    4 A
+                                </td>
+                                <td class="text-center">
+                                    3.13 V
+                                </td>
+                                <td class="text-center">
+                                    70 mV
+                                </td>
+                                <td class="text-center">
+                                    3.56 A
+                                </td>
+                                <td class="text-center">
+                                    66 °C, 78°C
+                                </td>
+                                <td class="text-center">
+                                    <a href="resources/579fccd4e6d24b58aa590e4056204618.png"
+                                        class="glightbox"
+                                        data-gallery="gallery-4.2"
+                                        data-title="4.2 V input, 4.0 A load">
+                                        waveform
+                                    </a>
+                                </td>
+                            </tr>
+                    </table>
+            </div>
+
+            <h2 class="text-xl font-bold mt-4">
+                Figures
+            </h2>
+            <div class="row">
+                <img class="six columns"
+                    src="resources/2e096c771f7a4f4989e867814ed1cf60.svg"/>
+                <img class="six columns"
+                    src="resources/84d199b703da40f3a83d5b7396d3cbd8.svg"/>
+            </div>
+            <div class="row">
+                <img class="six columns"
+                    src="resources/02ee5b609503495699790fb7f71ea088.svg"/>
+                <img class="six columns"
+                    src="resources/8f0c125d7fbf4c00ba8f82ef5fbe2df7.svg"/>
+            </div>
+            <div class="row">
+                <img class="six columns"
+                    src="resources/54424b83144f46b1a595785d82dc5444.svg"/>
+            </div>
+
+            <h2 id="setup">
+                Measurement setup
+            </h2>
+            <p>
+                The measurements above were taken in an ambient temperature 24°C using the following equipment:
+                <ul>
+                    <li>Electronic load:
+                        <a href="https://www.bkprecision.com/products/dc-electronic-loads/8540-150-w-dc-electronic-load.html"
+                           class="no-underline text-blue-400 hover:underline;">
+                           B&amp;K Precision 8540
+                        </a>
+                    </li>
+                    <li>Multimeter for voltage &amp; current measurement:
+                        <a href="https://t1.daumcdn.net/cfile/tistory/99C4F8335A13B27607?download"
+                           class="no-underline text-blue-400 hover:underline;">
+                           ESCORT 179
+                        </a>
+                    </li>
+                    <li>Oscilloscope:
+                        <a href="https://www.rigolna.com/products/digital-oscilloscopes/1000z/"
+                           class="no-underline text-blue-400 hover:underline;">
+                           Rigol DS1054Z
+                        </a>
+                    </li>
+                    <li>Multimeter for contact temperature measurement:
+                        <a href="https://www.uni-t.cz/en/p/multimeter-uni-t-ut-70a"
+                           class="no-underline text-blue-400 hover:underline;">
+                           Uni-T UT-70A
+                        </a>
+                    </li>
+                </ul>
+            </p>
+            <div class="row">
+                <a href="resources/8d9b71bdaea047cab81d7e2fe89e3678.jpg" class="glightbox six columns" data-gallery="setup">
+                    <img src="resources/6f2f417047244912856a6dd9b8daaeea.jpg" class="u-full-width" style="margin-bottom: 10px;"/>
+                </a>
+                <a href="resources/f9b705d0bca14770a0fb7a46a81be5af.jpg" class="glightbox six columns" data-gallery="setup">
+                    <img src="resources/b34378c3e7bc4869be3695ff9577cf96.jpg" class="u-full-width" style="margin-bottom: 10px;"/>
+                </a>
+            </div>
+
+            <div id="footer">
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            const lightbox = GLightbox();
+        </script>
+    </body>
+</html>

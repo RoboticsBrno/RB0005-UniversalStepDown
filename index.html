@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>RB0005 – UniversalStepdown</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="resources/normalize.css" type="text/css">
+        <link rel="stylesheet" href="resources/skeleton.css" type="text/css">
+        <link rel="stylesheet" href="resources/style.css" type="text/css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="rb0005-universal-stepdown">RB0005 – Universal Stepdown</h1>
+            <figure>
+            <img src="resources/header.jpg" alt="StepDown photo" /><figcaption>StepDown photo</figcaption>
+            </figure>
+            <p><a href="https://www.tindie.com/stores/yaqwsx/?ref=offsite_badges&amp;utm_source=sellers_yaqwsx&amp;utm_medium=badges&amp;utm_campaign=badge_large"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-mediums.png" alt="I sell on Tindie!" /></a></p>
+            <p>Most of our projects at RoboticsBrno are powered either by Li-ion cells or 12V power sources. However, most of our servos and boards require either 5V or 3V3 power source.</p>
+            <p>We used to buy cheap stepdown modules from Aliexpress to do the job. They are inexpensive but their performance is questionable. Also, it is always a surprise what you get in the envelope – some batches of them operate better, some of them worse. One day, we decided to stop wasting our time with poor-performing modules and we designed our own custom module – the RB0005 Universal Stepdown.</p>
+            <p>It is a simple and low-cost design based on the <a href="https://file.remont-aud.net/baza/dc_dc/data/SY8105.pdf">SY8105</a>. And it gets the job done – see the evaluation of our design below. You can also look at our design on the <a href="https://github.com/RoboticsBrno/RB0005-UniversalStepDown">project repository</a>.</p>
+            <h2 id="what-does-the-module-offer">What does the module offer?</h2>
+            <ul>
+            <li>there are two versions – 5V and 3.3V fixed output</li>
+            <li>input voltage up to 18 V</li>
+            <li>continuous load: 3 A (without cooling)/4 A (with cooling)</li>
+            <li>pin compatible with 7805 linear voltage regulator and most of the Chinese modules</li>
+            <li>has an enable pin (pull low to disable the module)</li>
+            <li>small factor 10.5×19.5 mm</li>
+            <li>low price: ~3 USD</li>
+            <li>you know what to expect – we provide measurements of the module performance
+            <ul>
+            <li><strong>see the performance of <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v/index.html">the 5V version</a></strong></li>
+            <li><strong>see the performance of <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval3v/index.html">the 3V3 version</a></strong></li>
+            <li><strong>see the performance of <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v_v2">the 5V version v2</a></strong></li>
+            </ul></li>
+            </ul>
+            <h2 id="what-we-do-not-provide">What we do not provide?</h2>
+            <ul>
+            <li>high-end, precision solution
+            <ul>
+            <li>we do not focus on incredibly high module efficiency</li>
+            <li>we do not focus on being low-noise</li>
+            </ul></li>
+            </ul>
+            <h2 id="faq">FAQ</h2>
+            <h4 id="why-the-rb0005-prefix">Why the “RB0005” prefix?</h4>
+            <p>To quickly distinguish our projects at <a href="https://github.com/RoboticsBrno/">RoboticsBrno</a>, e.g., when ordering, we decided to give a each project a unique code.</p>
+            <h4 id="why-is-there-no-adjustable-version">Why is there no adjustable version?</h4>
+            <p>We aim for usability. Usually, you need to lower your voltage to 5 V (servos) or 3.3 V (powering MCU) in DIY robotics. Having an adjustable version increases the chances of misconfiguration.</p>
+            <h4 id="why-should-i-use-your-module-instead-of-1-module-from-aliexpress">Why should I use your module instead of $1 module from Aliexpress?</h4>
+            <p>Well, it depends on your needs. If you need a certain level of reliability, it might be beneficial to know what to expect from your device. With our stepdown, you know it: see <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v/index.html">evaluation of the 5V version</a> or the <a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval3v/index.html">the 3V3 version</a>. You could buy a module from Aliexpress and measure it by yourself. However, that is laborious and you cannot be sure that you will get the same-performing module when you order it again.</p>
+            <h2 id="licence">Licence</h2>
+            <p><a href="https://roboticsbrno.github.io/RB0005-UniversalStepDown/">RB0005 – Universal Stepdown</a> by <a href="https://honzamrazek.cz">Jan Mrázek</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0 <img src="https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png" alt="badge" /></a>.</p>
+        </div>
+    </body>
+
+    </html>
