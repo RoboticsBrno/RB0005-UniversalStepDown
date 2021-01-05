@@ -35,7 +35,7 @@ repository](https://github.com/RoboticsBrno/RB0005-UniversalStepDown).
 - you know what to expect – we provide measurements of the module performance
     - **see the performance of [the 5V version](https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v/index.html)**
     - **see the performance of [the 3V3 version](https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval3v/index.html)**
-    - **see the performance of [the 5V version v2](https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v/eval5v_v2)
+    - **see the performance of [the 5V version v2](https://roboticsbrno.github.io/RB0005-UniversalStepDown/eval5v_v2)**
 
 ## What we do not provide?
 
